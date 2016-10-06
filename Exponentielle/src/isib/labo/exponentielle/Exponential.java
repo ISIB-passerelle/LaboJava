@@ -14,7 +14,7 @@ import java.math.RoundingMode;
 
 public class Exponential {
     
-    public static final int PRECISION = (null != null) ? 0 : 100;; // max. 379
+    public static final int PRECISION = (null != null) ? 0 : 100; // max. 379
     public static final int ROUNDING  = (null != null) ? 0 : 50; // max. 749 for e^1
 
     public static void main(String[] args) {
