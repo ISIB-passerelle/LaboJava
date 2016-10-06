@@ -14,11 +14,18 @@ import java.math.RoundingMode;
 
 public class Exponential {
     
-    public static final int PRECISION = 100; // max. 379
+    public static final int PRECISION = (null != null) ? 0 : 100;; // max. 379
+    public static final int ROUNDING  = (null != null) ? 0 : 50; // max. 749 for e^1
 
     public static void main(String[] args) {
 
         int nb = 6;
+
+        System.out.println("e^" + nb + " = " + exponential(nb));
+    }
+    
+    public static BigDecimal exponential(int nb) {
+        
         BigDecimal fact;
 
         BigDecimal sum = new BigDecimal(0);
@@ -30,21 +37,20 @@ public class Exponential {
             fact = factorielle(i);
             power = new BigDecimal(Math.pow(nb, i));
 
-            // rounding up to 749 digits for e^1
-            result = power.divide(fact, 50, RoundingMode.HALF_UP);
+            result = power.divide(fact, ROUNDING, RoundingMode.HALF_UP);
             sum = sum.add(result);
         }
-
-        System.out.println("e^" + nb + " = " + sum);
+        
+        return sum;
     }
 
     public static BigDecimal factorielle(int nb) {
 
         BigDecimal fact = BigDecimal.valueOf(1);
 
-        for (int i = 1; i <= nb; ++i)
+        for (int i = 1; i <= Math.abs(nb); ++i)
             fact = fact.multiply(BigDecimal.valueOf(i));
 
-        return fact;
+        return (nb < 0) ? fact.negate() : fact;
     }
 }
