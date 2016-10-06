@@ -8,8 +8,6 @@ package isib.labo.exponentielle;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -66,7 +64,7 @@ public class ExponentialTest {
         int nb = 0;
 
         BigDecimal expResult = BigDecimal.valueOf(1);
-        BigDecimal result = Exponential.factorielle(nb);
+        BigDecimal result = Exponential.factorial(nb);
 
         assertEquals(expResult, result);
     }
@@ -76,7 +74,7 @@ public class ExponentialTest {
         int nb = 1;
 
         BigDecimal expResult = BigDecimal.valueOf(1);
-        BigDecimal result = Exponential.factorielle(nb);
+        BigDecimal result = Exponential.factorial(nb);
 
         assertEquals(expResult, result);
     }
@@ -86,7 +84,7 @@ public class ExponentialTest {
         int nb = 2;
 
         BigDecimal expResult = BigDecimal.valueOf(2);
-        BigDecimal result = Exponential.factorielle(nb);
+        BigDecimal result = Exponential.factorial(nb);
 
         assertEquals(expResult, result);
     }
@@ -96,7 +94,7 @@ public class ExponentialTest {
         int nb = 3;
 
         BigDecimal expResult = BigDecimal.valueOf(6);
-        BigDecimal result = Exponential.factorielle(nb);
+        BigDecimal result = Exponential.factorial(nb);
 
         assertEquals(expResult, result);
     }
@@ -106,7 +104,7 @@ public class ExponentialTest {
         int nb = 4;
 
         BigDecimal expResult = BigDecimal.valueOf(24);
-        BigDecimal result = Exponential.factorielle(nb);
+        BigDecimal result = Exponential.factorial(nb);
 
         assertEquals(expResult, result);
     }
@@ -116,7 +114,7 @@ public class ExponentialTest {
         int nb = 5;
 
         BigDecimal expResult = BigDecimal.valueOf(120);
-        BigDecimal result = Exponential.factorielle(nb);
+        BigDecimal result = Exponential.factorial(nb);
 
         assertEquals(expResult, result);
     }
@@ -126,7 +124,7 @@ public class ExponentialTest {
         int nb = 14;
 
         BigDecimal expResult = new BigDecimal("87178291200");
-        BigDecimal result = Exponential.factorielle(nb);
+        BigDecimal result = Exponential.factorial(nb);
 
         assertEquals(expResult, result);
     }
@@ -136,7 +134,7 @@ public class ExponentialTest {
         int nb = 20;
 
         BigDecimal expResult = new BigDecimal("2432902008176640000");
-        BigDecimal result = Exponential.factorielle(nb);
+        BigDecimal result = Exponential.factorial(nb);
 
         assertEquals(expResult, result);
     }
@@ -146,7 +144,7 @@ public class ExponentialTest {
         int nb = -6;
 
         BigDecimal expResult = new BigDecimal("-720");
-        BigDecimal result = Exponential.factorielle(nb);
+        BigDecimal result = Exponential.factorial(nb);
 
         assertEquals(expResult, result);
     }

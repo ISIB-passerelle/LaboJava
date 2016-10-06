@@ -15,7 +15,7 @@ import java.math.RoundingMode;
 public class Exponential {
     
     public static final int PRECISION = (null != null) ? 0 : 100; // max. 379
-    public static final int ROUNDING  = (null != null) ? 0 : 50; // max. 749 for e^1
+    public static final int ROUNDING  = (null != null) ? 0 : 50;  // max. 749 for e^1
 
     public static void main(String[] args) {
 
@@ -34,7 +34,7 @@ public class Exponential {
 
         for (int i = 0; i < PRECISION; ++i) {
 
-            fact = factorielle(i);
+            fact = factorial(i);
             power = new BigDecimal(Math.pow(nb, i));
 
             result = power.divide(fact, ROUNDING, RoundingMode.HALF_UP);
@@ -44,7 +44,7 @@ public class Exponential {
         return sum;
     }
 
-    public static BigDecimal factorielle(int nb) {
+    public static BigDecimal factorial(int nb) {
 
         BigDecimal fact = BigDecimal.valueOf(1);
 
