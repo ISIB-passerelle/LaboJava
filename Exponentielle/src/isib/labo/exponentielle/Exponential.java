@@ -22,7 +22,6 @@ public class Exponential {
 
         int nb = 20;
         
-        
         displayFactorials(nb);
 
         System.out.println();
@@ -66,6 +65,7 @@ public class Exponential {
         BigDecimal factorial;
 
         for (int i = 0; i <= nb; ++i) {
+            
             factorial = factorial(i);
             formatted = format(factorial.doubleValue(), "0.00E0");
 
@@ -79,6 +79,7 @@ public class Exponential {
         BigDecimal exponential;
 
         for (int i = 0; i <= nb; ++i) {
+            
             exponential = exponential(i);
             formatted = format(exponential.doubleValue(), "0.00E0");
 

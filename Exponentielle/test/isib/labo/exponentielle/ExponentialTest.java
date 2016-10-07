@@ -132,7 +132,7 @@ public class ExponentialTest {
     public void testExponential_0() {
         int nb = 0;
 
-        BigDecimal expResult = new BigDecimal("1.0000000000");
+        BigDecimal expResult = new BigDecimal("1");
         BigDecimal result = Exponential.exponential(nb);
 
         assertEquals(expResult, result);
