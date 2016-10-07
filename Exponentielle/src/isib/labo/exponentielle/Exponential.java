@@ -42,6 +42,7 @@ public class Exponential {
             power = new BigDecimal(Math.pow(nb, i));
 
             result = power.divide(fact, ROUNDING, RoundingMode.HALF_DOWN);
+            
             sum = sum.add(result);
         }
 
@@ -55,7 +56,6 @@ public class Exponential {
         for (int i = 1; i <= Math.abs(nb); ++i)
             fact = fact.multiply(BigDecimal.valueOf(i));
         
-
         return (nb < 0) ? fact.negate() : fact;
     }
     
