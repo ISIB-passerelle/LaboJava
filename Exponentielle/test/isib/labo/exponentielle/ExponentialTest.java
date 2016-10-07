@@ -5,8 +5,6 @@
  */
 package isib.labo.exponentielle;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -26,25 +24,6 @@ public class ExponentialTest {
 
     @BeforeClass
     public static void setUpClass() {
-        // YOLO https://caffinc.github.io/2015/12/static-final-java-junit-test/
-        
-        try {
-            
-            Field field = Exponential.class.getDeclaredField("ROUNDING");
-
-            Field modifiersField = Field.class.getDeclaredField("modifiers");
-
-            modifiersField.setAccessible(true);
-            modifiersField.setInt(field, field.getModifiers() & ~Modifier.FINAL);
-
-            field.setAccessible(true);
-            
-            field.set(null, 10);
-
-        } catch (NoSuchFieldException | SecurityException | IllegalArgumentException | IllegalAccessException ex) {
-            
-            System.err.println(ex.getLocalizedMessage());
-        }
     }
 
     @AfterClass
